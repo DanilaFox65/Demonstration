@@ -60,6 +60,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 30px;
+    align-items: center; /* Выравниваем все элементы по центру по вертикали */
 }
 
 .nav-links a {
@@ -74,18 +75,21 @@ nav {
 }
 
 .cta-button {
-    background-color: var(--primary);
-    color: white;
-    padding: 10px 20px;
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(255, 109, 0, 0.3);
+    background-color: var(--primary);
+    color: white;
 }
+
+
 
 /* Hero Section */
 .hero {
