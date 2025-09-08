@@ -1,4 +1,3 @@
-/* CSS Variables */
 :root {
     --primary: #ff6d00; /* Оранжевый основной */
     --secondary: #ff9100; /* Вторичный оранжевый */
@@ -60,7 +59,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 30px;
-    align-items: center; /* Выравниваем все элементы по центру по вертикали */
+    align-items: center;
 }
 
 .nav-links a {
@@ -74,7 +73,24 @@ nav {
     color: var(--primary);
 }
 
+/* Buttons */
 .cta-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 109, 0, 0.3);
+}
+
+.secondary-button {
     background-color: white;
     color: var(--primary);
     border: 2px solid var(--primary);
@@ -82,14 +98,14 @@ nav {
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.cta-button:hover {
+.secondary-button:hover {
     background-color: var(--primary);
     color: white;
 }
-
-
 
 /* Hero Section */
 .hero {
@@ -120,31 +136,17 @@ nav {
     margin-top: 30px;
 }
 
-.secondary-button {
-    background-color: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.secondary-button:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
-/* Features Section */
-.features {
-    padding: 60px 0;
-}
-
+/* Common Section Styles */
 .section-title {
     text-align: center;
     margin-bottom: 50px;
     font-size: 36px;
     color: var(--primary);
+}
+
+/* Features Section */
+.features {
+    padding: 60px 0;
 }
 
 .features-grid {
@@ -212,6 +214,97 @@ nav {
     margin: 20px 0;
 }
 
+/* Courses Section */
+.courses {
+    padding: 60px 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.course-icon {
+    background-color: #fff3e0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary);
+    font-size: 32px;
+}
+
+.course-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.course-level {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #00838f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.course-features {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.course-features li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.course-features li::before {
+    content: '✓';
+    color: var(--success);
+    position: absolute;
+    left: 0;
+}
+
+.course-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
 /* Footer */
 footer {
     background-color: var(--dark);
@@ -264,15 +357,15 @@ footer {
     .hero h1 {
         font-size: 36px;
     }
-    
+
     .hero p {
         font-size: 18px;
     }
-    
+
     .nav-links {
         display: none;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
